@@ -1,12 +1,14 @@
 <?php
 /**
+ * GitHub: https://github.com/loyalist28/NEW-TELer
+ *
  * Простой класс-обёртка для работы с API NEW-TEL.
  *
  * Для работы требуется создать экземпляр класса, передав в конструктор ключи, сформированные в личном кабинете кабинете системы NEW-TEL.
  * В данный момент реализован вызов метода "call-password/start-password-call" (авторизация по звонку)
  * через метод startCallPassword(). Обращение к остальному функционалу API NEW-TEL возможно через
  * универсальный метод sendRequest(). Класс будет дополняться и развиваться по мере необходимости.
- * 
+ *
  */
 class NewTeler {
     /**
@@ -23,7 +25,6 @@ class NewTeler {
      * Конструктор класса
      *
      * @param  string  $newTelAPIKey     Ключ доступа к API-серверу NEW-TEL
-     *
      * @param  string  $requestsSignKey  Ключ для подписи запросов
      */
     function __construct(string $newTelAPIKey, string $requestsSignKey)
@@ -37,16 +38,13 @@ class NewTeler {
      *
      * @param   string  $methodName          Имя метода API NEW-TEL без ведущего и закрывающего слэша,
      *                                       пример: "company/get-state"
-     *
      * @param   array   $params              Массив параметров передаваемых методу API NEW-TEL
      *                                       Необязательный. По-умолчанию - пустой массив
-     *
      * @param   bool    $jsonSendFormat      Флаг указывающий в каком формате передавать параметры
      *                                       и какое значение устанавливать в http-заголовок "Content-Type".
      *                                       true - application/json
      *                                       false - application/x-www-form-urlencoded
      *                                       Необязательный. По-умолчанию - true
-     *
      * @param   bool    $acceptJsonFormat    Флаг указывающий в каком формате вернуть ответ с сервера
      *                                       true - application/json
      *                                       false - application/xml
@@ -97,13 +95,11 @@ class NewTeler {
      * Метод вызова авторизации по звонку
      *
      * @param   array   $params              Массив параметров передаваемых методу API NEW-TEL
-     *
      * @param   bool    $jsonSendFormat      Флаг указывающий в каком формате передавать параметры
      *                                       и какое значение устанавливать в http-заголовок "Content-Type".
      *                                       true - application/json
      *                                       false - application/x-www-form-urlencoded
      *                                       Необязательный. По-умолчанию - true
-     *
      * @param   bool    $acceptJsonFormat    Флаг указывающий в каком формате вернуть ответ с сервера
      *                                       true - application/json
      *                                       false - application/xml
@@ -124,7 +120,6 @@ class NewTeler {
      *
      * @param   string  $methodName          Имя метода API NEW-TEL без ведущего и закрывающего слэша,
      *                                       пример: "company/get-state"
-     *
      * @param   array   $params              Массив параметров передаваемых методу API NEW-TEL
      *                                       Необязательный. По-умолчанию - пустой массив
      *
